@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  border: 1px red solid;
+  min-height: 100vh;
+}
