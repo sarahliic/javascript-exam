@@ -75,29 +75,31 @@
           >
           <input
             type="text"
-            class="form-control"
+            class="form-control name"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
+          <p id="validation"></p>
         </div>
         <div class="mb-3">
           <label
-            for="exampleInputPassword1"
+            for="exampleInputPassword1 "
             class="form-label"
             style="text-align: right"
             >الرقم السري</label
           >
           <input
             type="password"
-            class="form-control"
+            class="form-control password"
             id="exampleInputPassword1"
           />
+          <p id="validation"></p>
         </div>
         <div style="display: flex">
           <a href="./siginup.html">حساب جديد</a>
           <p>لا املك حساب من قبل؟</p>
         </div>
-        <button type="submit" class="btn btn-primary">ارسال</button>
+        <button type="submit" class="btn btn-primary" id="btn">ارسال</button>
       </form>
     </div>
     <!-- Bootstrap -->
@@ -107,5 +109,6 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <script src="./js/login.js"></script>
   </body>
 </html>

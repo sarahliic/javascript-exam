@@ -8,10 +8,11 @@ btn.addEventListener("click", (e) => {
   let emailUser = document.querySelector(".email-user");
   let passwordUser = document.querySelector(".password-user");
 
-  //   let usernameRegex = /d+$/g;
-  let userValue = /\d+$/g;
-  let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
-  //   let passwordUserValue = /^\d+([0-9]+$/g;
+  let usernameRegex = /^[A-Za-z]{3,}$/;
+  let userValue = /^[A-Za-z]{5,}$/;
+  let emailRegex =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  let passwordUserValue = /^\d{4,}$/;
 
   // validation
   if (
@@ -21,16 +22,13 @@ btn.addEventListener("click", (e) => {
     passwordUser.value === ""
   ) {
     alert("inputs is empty");
-  } else if (username.value.length > 3 && typeof username.value === "string") {
+  } else if (username.value.match(usernameRegex)) {
     alert("invalied user name");
   } else if (user.value.match(userValue)) {
     alert("invalied user ");
   } else if (emailUser.value.match(emailRegex)) {
     alert("invalied Email");
-  } else if (
-    passwordUser.value.length > 4 &&
-    typeof passwordUser.value === "number"
-  ) {
+  } else if (passwordUser.value.match(passwordUserValue)) {
     alert("invalied password name");
   } else {
     fetch("https://655b181fab37729791a889d6.mockapi.io/user", {
@@ -48,6 +46,7 @@ btn.addEventListener("click", (e) => {
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
+        window.location.href = "Login.html";
       });
   }
 });
